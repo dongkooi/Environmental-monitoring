@@ -32,7 +32,11 @@ router.post('/', (req, res) => {
 router.get("/", (req, res) => {
     Data
         .getData()
-        .then(data => res.send(data))
+        .then(data => res.send({
+            err_code: 0,
+            message: 'success',
+            data: data
+        }))
         .catch(err => {
             console.error(err);
             res.status(500).send(err);
