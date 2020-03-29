@@ -11,7 +11,7 @@ const creatData = ({ temperature, humidity, time }) =>
 const getData = () =>
     new Promise((resolve, reject) => {
         dataModal
-            .find({ time: { $gt: monent().startOf('day').unix() } })
+            .find({ time: { $gt: monent().subtract(1, 'day').unix() } })
             .sort({ _id: -1 })
             .exec()
             .then(data => resolve(data))
