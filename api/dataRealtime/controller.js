@@ -2,7 +2,7 @@
 const dataModal = require('./modal');
 const creatData = ({ temperature, humidity }) =>
     new Promise((resolve, reject) => {
-        dataModal.create({ temperature, humidity })
+        dataModal.create({ temperature, humidity, time })
             .then(data => resolve(data))
             .catch(err => reject(err))
     });
