@@ -15,9 +15,10 @@ router.post('/', (req, res) => {
         body = Buffer.concat(body).toString();
         Data
             .creatData({
-                 "temperature": JSON.parse(body).temperature,
-                  "humidity": JSON.parse(body).humidity,
-                   "time": moment().unix() })
+                "temperature": JSON.parse(body).temperature,
+                "humidity": JSON.parse(body).humidity,
+                "time": moment().unix()
+            })
             .then(() => res.send({
                 err_code: 0,
                 message: 'success',
