@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Data = require('./controller');
+const moment = require('moment');
 
 router.use((req, res, next) => {
     next();
@@ -13,7 +14,11 @@ router.post('/', (req, res) => {
     }).on('end', () => {
         body = Buffer.concat(body).toString();
         Data
-            .creatData(JSON.parse(body))
+            .creatData({
+                "temperature": JSON.parse(body).temperature,
+                "humidity": JSON.parse(body).humidity,
+                "time": moment().unix()
+            })
             .then(() => res.send({
                 err_code: 0,
                 message: 'success',
