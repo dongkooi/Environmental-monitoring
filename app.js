@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 const getRealTime = require('./api/dataRealtime/router');
 const getDataDaily = require('./api/dataDaily/router');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 const linkDataBase = 'mongodb://ddoongngoo:ngodong97@ds155218.mlab.com:55218/arduino';
-
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
