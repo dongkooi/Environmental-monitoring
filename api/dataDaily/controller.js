@@ -12,7 +12,7 @@ const getData = () =>
     new Promise((resolve, reject) => {
         dataModal
             .find({ time: { $gt: monent().subtract(1, 'day').unix() } })
-            .sort({ _id: -1 })
+            .sort({ time: 1 })
             .exec()
             .then(data => resolve(data))
             .catch(err => reject(err));
