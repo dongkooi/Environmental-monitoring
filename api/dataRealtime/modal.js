@@ -5,6 +5,7 @@ const DataSchema = new Schema({
     temperature: Number,
     humidity: Number,
     time: Number,
+    dustDensity: Number,
 })
 
 module.exports = mongoose.model('arduino', DataSchema);

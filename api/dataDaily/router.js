@@ -17,7 +17,8 @@ router.post('/', (req, res) => {
             .creatData({
                 "temperature": JSON.parse(body).temperature,
                 "humidity": JSON.parse(body).humidity,
-                "time": moment().unix()
+                "dustDensity": JSON.parse(body).dustDensity,
+                "time": moment().unix(),
             })
             .then(() => res.send({
                 err_code: 0,
