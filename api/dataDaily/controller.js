@@ -13,7 +13,6 @@ const getData = () =>
         dataModal
             .find({ time: { $gt: monent().subtract(1, 'day').unix() } }, { _id: 0 })
             .sort({ time: 1 })
-            .pretty()
             .exec()
             .then(data => resolve(data))
             .catch(err => reject(err));

@@ -12,7 +12,6 @@ const getData = () =>
         dataModal
             .find({}, { _id: 0 })
             .sort({ time: -1 })
-            .pretty()
             .limit(1)
             .exec()
             .then(data => resolve(data))
