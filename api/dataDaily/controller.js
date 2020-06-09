@@ -1,7 +1,7 @@
 
 const dataModal = require('./modal');
 const monent = require('moment');
-const creatData = ({ temperature, humidity, time }) =>
+const creatData = ({ temperature, humidity, dustDensity, time }) =>
     new Promise((resolve, reject) => {
         dataModal.create({ temperature, humidity, dustDensity, time })
             .then(data => resolve(data))
